@@ -151,7 +151,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHV-MQ-P9n">
-                                <rect key="frame" x="132.5" y="641" width="149.5" height="48"/>
+                                <rect key="frame" x="132.5" y="690" width="149.5" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -167,14 +167,15 @@
                             <constraint firstItem="NOa-na-zWx" firstAttribute="top" secondItem="Ie7-x9-OMi" secondAttribute="bottom" constant="8" id="ckp-Z8-wsN"/>
                             <constraint firstItem="Ie7-x9-OMi" firstAttribute="centerX" secondItem="NOa-na-zWx" secondAttribute="centerX" id="dgT-k0-T8s"/>
                             <constraint firstItem="Inz-xS-i1E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dr0-2C-Huc"/>
-                            <constraint firstItem="Ie7-x9-OMi" firstAttribute="top" relation="lessThanOrEqual" secondItem="Inz-xS-i1E" secondAttribute="bottom" constant="436" id="fPQ-5S-doo"/>
-                            <constraint firstItem="Ie7-x9-OMi" firstAttribute="top" secondItem="wHV-MQ-P9n" secondAttribute="bottom" constant="57" id="qT4-XW-9Kd"/>
+                            <constraint firstItem="wHV-MQ-P9n" firstAttribute="top" relation="lessThanOrEqual" secondItem="Inz-xS-i1E" secondAttribute="bottom" constant="380" id="fi8-Qw-bAZ"/>
+                            <constraint firstItem="Ie7-x9-OMi" firstAttribute="top" secondItem="wHV-MQ-P9n" secondAttribute="bottom" constant="8" id="qT4-XW-9Kd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="flipCountLabel" destination="NOa-na-zWx" id="Fb9-3e-6mh"/>
                         <outlet property="gamePointLabel" destination="wHV-MQ-P9n" id="SVA-Ck-Tpz"/>
+                        <outlet property="newGameButton" destination="Ie7-x9-OMi" id="D6c-3P-xAh"/>
                         <outletCollection property="cardButtons" destination="XuX-V6-bOG" collectionClass="NSMutableArray" id="ro0-jZ-Glp"/>
                         <outletCollection property="cardButtons" destination="PuQ-wH-dNp" collectionClass="NSMutableArray" id="iQV-Mz-h8L"/>
                         <outletCollection property="cardButtons" destination="XnO-F6-JNB" collectionClass="NSMutableArray" id="2i6-oY-ute"/>

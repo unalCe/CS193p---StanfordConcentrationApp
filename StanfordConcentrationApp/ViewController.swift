@@ -19,6 +19,12 @@ class ViewController: UIViewController {
         }
     }
     
+    var themeAsEnum: EmojiTheme? {
+        didSet {
+            randomTheme = themeAsEnum?.rawValue ?? "DANGERSTOP"
+        }
+    }
+    
     var cardBackgroundColor: UIColor?
     
     @IBOutlet private var cardButtons: [UIButton]!
@@ -31,18 +37,14 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var gamePointLabel: UILabel!
     
+    @IBOutlet weak var newGameButton: UIButton!
+    
     @IBAction private func touchCard(_ sender: UIButton) {
         if let cardNumber = cardButtons.index(of: sender) {
             game.chooseCard(at: cardNumber)
             updateViewFromModel()
         } else {
             print("The card you've tried to flip is not found.")
-        }
-    }
-    
-    var themeAsEnum: EmojiTheme? {
-        didSet {
-            randomTheme = themeAsEnum?.rawValue ?? "DANGERSTOP"
         }
     }
     
@@ -68,21 +70,25 @@ class ViewController: UIViewController {
             gamePointLabel.textColor = .orange
             flipCountLabel.textColor = .orange
             cardBackgroundColor = .orange
+            newGameButton.setTitleColor(.orange, for: .normal)
         case .faces:
             view.backgroundColor = .white
             gamePointLabel.textColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
             flipCountLabel.textColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
             cardBackgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
+            newGameButton.setTitleColor(#colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1), for: .normal)
         case .animals:
             view.backgroundColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
             gamePointLabel.textColor = .black
             flipCountLabel.textColor = .black
             cardBackgroundColor = .black
+            newGameButton.setTitleColor(.black, for: .normal)
         case .sports:
             view.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
             gamePointLabel.textColor = #colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)
             flipCountLabel.textColor = #colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)
             cardBackgroundColor = #colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)
+            newGameButton.setTitleColor(#colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1), for: .normal)
         }
     }
     
