@@ -40,24 +40,24 @@ class ViewController: UIViewController {
         }
     }
     
-    var enumOlarakTema: EmojiTheme? {
+    var themeAsEnum: EmojiTheme? {
         didSet {
-            randomTheme = enumOlarakTema?.rawValue ?? "DANGERSTOP"
+            randomTheme = themeAsEnum?.rawValue ?? "DANGERSTOP"
         }
     }
     
     @IBAction func restartGame(_ sender: UIButton) {
         game.resetGame()
         emojiTheme = [:]
-        enumOlarakTema = game.randomTheme
-        setThemeBackground(for: enumOlarakTema ?? game.randomTheme)
+        themeAsEnum = game.randomTheme
+        setThemeBackground(for: themeAsEnum ?? game.randomTheme)
         updateViewFromModel()
     }
     
     // MARK: - View Controller
     override func viewDidLoad() {
-        enumOlarakTema = game.randomTheme
-        setThemeBackground(for: enumOlarakTema ?? game.randomTheme)
+        themeAsEnum = game.randomTheme
+        setThemeBackground(for: themeAsEnum ?? game.randomTheme)
         updateViewFromModel()
     }
     
@@ -122,7 +122,7 @@ class ViewController: UIViewController {
     private func emoji(for card: Card) -> String {
         if emojiTheme[card] == nil, randomTheme.count > 0 {
             
-            let randomStringIndex = randomTheme.index(randomTheme.startIndex, offsetBy: randomTheme.count.randomYolla)
+            let randomStringIndex = randomTheme.index(randomTheme.startIndex, offsetBy: randomTheme.count.arc4random)
             emojiTheme[card] = String(randomTheme.remove(at: randomStringIndex))
         }
         return emojiTheme[card] ?? "?"
@@ -130,7 +130,7 @@ class ViewController: UIViewController {
 }
 
 extension Int {
-    var randomYolla: Int {
+    var arc4random: Int {
         if self > 0 {
             return Int(arc4random_uniform(UInt32(self)))
         } else if self < 0 {
