@@ -14,7 +14,6 @@ struct Card: Hashable
     /// The hashvalue of the card
     var hashValue: Int { return identifier }
     
-    
     /// Conforming the Equatable protocol.
     /// Which also allows us to describe what "equal" means for the struct instances. Returns true if both parameter's identifiers are equal.
     static func ==(lhs: Card, rhs: Card) -> Bool {
